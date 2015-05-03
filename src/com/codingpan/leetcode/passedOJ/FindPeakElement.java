@@ -51,7 +51,6 @@ public class FindPeakElement {
 			return 0;
 		}
 
-		int len = num.length;
 		return findPeakUtil(num, 0, num.length-1, num.length);
 
 	}

@@ -73,7 +73,7 @@ public class MajorityElement {
 	}
 
 	public static void main(String[] args) {
-		int[] num = {-1, 1, 1, 1, 2, 1};
+//		int[] num = {-1, 1, 1, 1, 2, 1};
 		String v1 = "1.8";
 		String v2 = "1.5";
 		String[] vv1 = v1.split("[^0-9]");
