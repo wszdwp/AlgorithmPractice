@@ -1,3 +1,5 @@
+import com.codingpan.leetcode.passedOJ.HappyNumber2;
+
 
 public class TestCases {
 	//Arrays
@@ -14,5 +16,22 @@ public class TestCases {
  	//String
  	String[] s0 = {"()()", "()[]{}", "()"};
 	String[] s1 = {"([)]", "(]"};
+	
+	// Happy number test
+	static int[] testNums = {19, 0, 1, -1, -9, 20};
+	
+	
+	public static void main(String[] args) {
+		HappyNumber2 testHappyNumber = new HappyNumber2();
+		for (Integer i : testNums) {
+			if (testHappyNumber.isHappy(i)) {
+				System.out.println(i + " is happy #");
+			} else {
+				System.out.println(i + " is not happy #");
+
+			}
+		}
+		
+	}
 
 }

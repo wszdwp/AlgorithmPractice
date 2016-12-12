@@ -55,5 +55,6 @@ public class HappyNumber {
 		System.out.println("2(false): " + isHappy(n2));
 
 	}
+
 }
  
