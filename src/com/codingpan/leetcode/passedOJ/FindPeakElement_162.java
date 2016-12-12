@@ -1,6 +1,7 @@
 package com.codingpan.leetcode.passedOJ;
 
-//Find Peak Element 
+// [162. Find Peak Element](https://leetcode.com/problems/find-peak-element/)
+
 //A peak element is an element that is greater than its neighbors.
 
 //Given an input array where num[i] ≠ num[i+1], find a peak element and return its index.
@@ -16,7 +17,7 @@ package com.codingpan.leetcode.passedOJ;
 //Credits:
 //Special thanks to @ts for adding this problem and creating all test cases.
 
-public class FindPeakElement {
+public class FindPeakElement_162 {
 	// O(n)
 	public static int findPeakElement(int[] num) {
 		if (num == null || num.length < 2) {

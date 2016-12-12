@@ -3,8 +3,8 @@ package com.codingpan.leetcode.passedOJ;
 import java.util.BitSet;
 
 /**
- * @author codingpan
  *
+ * [217. Contains Duplicate](https://leetcode.com/problems/contains-duplicate/)
  *  Given an array of integers, 
  *	find if the array contains any duplicates. 
  *	Your function should return true if any value appears at least twice in the array, 
@@ -12,7 +12,7 @@ import java.util.BitSet;
  *
  *	Subscribe to see which companies asked this question
  */
-public class DuplicateArrayElem {
+public class DuplicateArrayElem_217 {
 	
 	public static boolean containsDuplicate(int[] nums) {
         boolean isDuplicate = false;

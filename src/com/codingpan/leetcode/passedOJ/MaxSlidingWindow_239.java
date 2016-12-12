@@ -1,6 +1,7 @@
 package com.codingpan.leetcode.passedOJ;
 
 /**
+ * [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
  * Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
  *
  *	For example,
@@ -21,7 +22,9 @@ package com.codingpan.leetcode.passedOJ;
  * @author Pan
  *
  */
-public class MaxSlidingWindow {
+
+
+public class MaxSlidingWindow_239 {
 	// Solu 1
 	public static int[] maxSlidingWindow(int[] nums, int k) {
 		int len = nums.length;

@@ -3,6 +3,8 @@ package com.codingpan.leetcode.TODO;
 import java.util.ArrayList;
 
 
+// [47. Permutations II](https://leetcode.com/problems/permutations-ii/)
+
 //Given a collection of numbers that might contain duplicates, 
 //return all possible unique permutations.
 //
@@ -11,7 +13,7 @@ import java.util.ArrayList;
 //[1,1,2], [1,2,1], and [2,1,1].
 
 
-public class Permutations {
+public class Permutations_047 {
 	
 	public ArrayList<ArrayList<Integer>> permuteUnique(int[] nums) {
         ArrayList<ArrayList<Integer>> res = new ArrayList<ArrayList<Integer>>();

@@ -1,6 +1,7 @@
 package com.codingpan.leetcode.TODO;
 
 /**
+ * [179. Largest Number](https://leetcode.com/problems/largest-number/)
  *	Given a list of non negative integers, 
  *	arrange them such that they form the largest number.
  *
@@ -45,7 +46,7 @@ class MyComparator implements Comparator<String> {
 	}
 }
 
-public class LargestNumber {
+public class LargestNumber_179 {
 	public static String largestNumber(int[] num) {
 
 		StringBuilder sb = new StringBuilder();

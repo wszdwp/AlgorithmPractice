@@ -1,6 +1,9 @@
 package com.codingpan.leetcode.TODO;
 
-public class Palindrome {
+
+// [125. Valid Palindrome](https://leetcode.com/problems/valid-palindrome/)
+
+public class Palindrome_125 {
 	//Recursion
 	public static boolean isPalindrome(String s) {
 		if (s.length() <= 1)	return true;

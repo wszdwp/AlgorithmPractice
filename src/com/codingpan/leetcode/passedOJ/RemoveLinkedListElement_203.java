@@ -1,5 +1,7 @@
 package com.codingpan.leetcode.passedOJ;
 
+
+// [203. Remove Linked List Elements](https://leetcode.com/problems/remove-linked-list-elements/)
 //Remove all elements from a linked list of integers that have value val.
 //
 //Example
@@ -20,7 +22,7 @@ package com.codingpan.leetcode.passedOJ;
 
 
 
-public class RemoveListNode {
+public class RemoveLinkedListElement_203 {
 	class ListNode {
 		int val;
 		ListNode next;

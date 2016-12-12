@@ -1,6 +1,6 @@
 package com.codingpan.leetcode.passedOJ;
 
-// Valid Parentheses 
+// [20. Valid Parentheses](https://leetcode.com/problems/valid-parentheses/)
 // Given a string containing just the characters '(', ')', '{', '}', '[' and ']', 
 // determine if the input string is valid.
 
@@ -22,9 +22,10 @@ package com.codingpan.leetcode.passedOJ;
 //							if it is ) not match
 //							else push
 
+
 import java.util.Stack;
 
-public class ValidateParentheses {
+public class ValidateParentheses_020 {
 	public static boolean isValid(String s) {
 		if (s == null || s.isEmpty()) {
 			return false;

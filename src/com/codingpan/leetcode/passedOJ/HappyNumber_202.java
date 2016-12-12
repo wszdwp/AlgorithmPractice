@@ -4,6 +4,8 @@ import java.util.HashSet;
 
 import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
 
+
+// [202. Happy Number](https://leetcode.com/problems/happy-number/)
 //Write an algorithm to determine if a number is "happy".
 //
 //A happy number is a number defined by the following process: 
@@ -22,7 +24,7 @@ import com.sun.org.apache.xml.internal.security.utils.HelperNodeList;
 //Credits:
 //Special thanks to @mithmatt and @ts for adding this problem and creating all test cases.
 
-public class HappyNumber {
+public class HappyNumber_202 {
 	
 	public static boolean isHappy(int n) {
         if (n == 0)	return false;
@@ -47,6 +49,33 @@ public class HappyNumber {
         
         return helper(tempRes, hSet);
 	}
+	
+	//version 2
+//	public boolean isHappy(int n) {
+//        boolean res = false;
+//        //TODO: body
+//        if (n <= 0)	return false;
+//        if (n == 1)	return true;
+//        
+//        while (n != 1) {
+//        	n = splitAndSum(n);
+//        }
+//        if (n == 1)	return true;
+//        
+//        return false;
+//    }
+//	
+//	private int splitAndSum(int n) {
+//		int digit = 0;
+//        int sum = 0;
+//        while (n > 0) {
+//        	digit = n % 10;
+//        	sum += digit * digit;
+//        	n = n / 10;
+//        }
+//        
+//        return sum;
+//	}
 	
 	public static void main(String[] args) {
 		int n = 19;
