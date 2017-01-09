@@ -31,7 +31,7 @@ import java.util.HashSet;
  * 
  */
 
-public class MaxProdOfWordLength {
+public class MaxProdOfWordLength_318 {
 	
 	public int maxProduct(String[] words) {
 		int maxProdOfWdLen = 0;
