@@ -1,4 +1,4 @@
-import com.codingpan.leetcode.passedOJ.HappyNumber_202;
+import com.codingpan.leetcode.passedOJ.LC202HappyNumber;
 
 
 
@@ -23,7 +23,7 @@ public class TestCases {
 	
 	
 	public static void main(String[] args) {
-		HappyNumber_202 testHappyNumber = new HappyNumber_202();
+		LC202HappyNumber testHappyNumber = new LC202HappyNumber();
 		for (Integer i : testNums) {
 			if (testHappyNumber.isHappy(i)) {
 				System.out.println(i + " is happy #");
