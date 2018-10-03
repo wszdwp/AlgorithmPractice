@@ -5,26 +5,24 @@ import java.util.List;
 
 public class LC077Combinations {
     public List<List<Integer>> combine(int n, int k) {
-    	List<List<Integer>> res = new ArrayList<List<Integer>>();
-    	List<Integer> cur = new ArrayList<Integer>();
-    	
-    	helper(n, k, 1, cur, res);
-    	
-    	return res;
+    	List<List<Integer>> combs = new ArrayList<List<Integer>>();
+    	if (n <=0 || n < k) return combs;
+    	List<Integer> comb = new ArrayList<Integer>();
+		combination(n, k, 1, comb, combs);
+    	return combs;
     }
-    
-    private void helper(int n, int k, int start, List<Integer> cur, List<List<Integer>> res) {
-    	if (cur.size() == k) {
-    		res.add(new ArrayList<Integer>(cur));
-    		return;
-    	} else {
-    		for (int i = start; i <= n; i++) {
-    			cur.add(i);
-    			helper(n, k, i+1, cur, res);
-    			cur.remove(cur.size()-1);
-    		}
-    	}
-    }
+
+    private void combination(int n, int k, int start, List<Integer> comb, List<List<Integer>> combs) {
+    	if (comb.size() == k) {
+			combs.add(new ArrayList<Integer>(comb));
+		} else {
+			for (int i = start; i <= n; i++) {
+				comb.add(i);
+				combination(n, k, i+1, comb, combs);
+				comb.remove(comb.size()-1);
+			}
+		}
+	}
     
     public static void main(String[] args) {
     	int n = 4;

@@ -53,7 +53,7 @@ public class LC202HappyNumber {
 	//version 2
 //	public boolean isHappy(int n) {
 //        boolean res = false;
-//        //TODO: body
+//        //todo: body
 //        if (n <= 0)	return false;
 //        if (n == 1)	return true;
 //        
