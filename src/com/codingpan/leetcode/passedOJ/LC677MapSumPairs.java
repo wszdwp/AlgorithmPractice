@@ -1,5 +1,6 @@
 package com.codingpan.leetcode.passedOJ;
 
+import com.codingpan.leetcode.util.Utility;
 import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
@@ -52,5 +53,30 @@ public class LC677MapSumPairs {
         StdOut.println(solu.sum("a"));
         solu.insert("aa", 2);
         StdOut.println(solu.sum("a"));
+    }
+
+    public static class LC001TwoSum {
+        public int[] twoSum(int[] nums, int target) {
+            Map<Integer, Integer> map = new HashMap<>();
+            int[] ans = new int[2];
+            for (int i = 0; i < nums.length; i++) {
+                if (map.containsKey(target - nums[i])) {
+                    ans[0] = i;
+                    ans[1] = map.get(target - nums[i]);
+                    return ans;
+                }
+                map.put(nums[i], i);
+            }
+            return ans;
+        }
+
+        public static void main(String[] args) {
+            LC001TwoSum solu = new LC001TwoSum();
+            int[] nums = {3, 2, 4};
+            int target = 6;
+
+            int[] ans = solu.twoSum(nums, target);
+            Utility.printArray(ans);
+        }
     }
 }

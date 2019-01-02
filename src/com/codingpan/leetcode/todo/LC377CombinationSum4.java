@@ -1,5 +1,8 @@
 package com.codingpan.leetcode.todo;
 
+import com.codingpan.leetcode.util.Utility;
+import edu.princeton.cs.algs4.StdOut;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +50,6 @@ public class LC377CombinationSum4 {
 	private void dfs(int[] nums, int target, int start, List<Integer> cur, List<List<Integer>> res) {
 		if (target == 0) {
 			res.add(new ArrayList<Integer>(cur));
-			return;
 		} else {
 			for (int i = start; i < nums.length; i++) {
 				if (target < nums[i])	return;
@@ -57,16 +59,43 @@ public class LC377CombinationSum4 {
 			}
 		}
 	}
+
+	public int combinationSum4_Cache(int[] nums, int target) {
+		int res = 0;
+		if (nums.length == 0 || target <= 0)	return res;
+		Arrays.sort(nums);
+		int[] cache = new int[target + 1];
+		for (int i = 0; i < cache.length; i++) cache[i] = -1;
+		cache[0] = 1;
+		res = dfsMemo(nums, target, cache);
+		return res;
+	}
+
+
+	private int dfsMemo(int[] nums, int target, int[] cache) {
+		if (target < 0) return 0;
+		if (cache[target] != -1) return cache[target];
+		int ans = 0;
+		for (int i = 0; i < nums.length; i++) {
+			ans += dfsMemo(nums, target - nums[i], cache);
+		}
+		cache[target] = ans;
+		return ans;
+	}
 	
 	public static void main(String[] args) {
 		int[] nums = {1, 2, 3};
-		int target = 4;
+		int target = 400 ;
 //		int[] nums = {3, 1, 2, 4};
 //		int target = 4;
 //		int[] nums = {4, 2, 1};
 //		int target = 32;
-		LC377CombinationSum4 sol = new LC377CombinationSum4();
-		System.out.println("res" + sol.combinationSum4(nums, target));
+		LC377CombinationSum4 solu = new LC377CombinationSum4();
+		List<List<Integer>> res = solu.combinationSum4(nums, target);
+		for (List<Integer> one : res) {
+			Utility.printList(one);
+		}
+		StdOut.println("ans = " + solu.combinationSum4_Cache(nums, target));
 	}
 
 }

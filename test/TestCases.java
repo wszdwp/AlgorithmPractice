@@ -1,5 +1,7 @@
 import com.codingpan.leetcode.passedOJ.LC202HappyNumber;
+import edu.princeton.cs.algs4.StdOut;
 
+import java.text.DecimalFormat;
 
 
 public class TestCases {
@@ -20,18 +22,36 @@ public class TestCases {
 	
 	// Happy number test
 	static int[] testNums = {19, 0, 1, -1, -9, 20};
+
+
+	public static boolean isValidNumber(String s) {
+		boolean isValid = false;
+		try {
+			Double.parseDouble(s);
+			isValid = true;
+		} catch (NumberFormatException e) {
+
+		}
+		return isValid;
+	}
 	
 	
 	public static void main(String[] args) {
-		LC202HappyNumber testHappyNumber = new LC202HappyNumber();
-		for (Integer i : testNums) {
-			if (testHappyNumber.isHappy(i)) {
-				System.out.println(i + " is happy #");
-			} else {
-				System.out.println(i + " is not happy #");
+//		LC202HappyNumber testHappyNumber = new LC202HappyNumber();
+//		for (Integer i : testNums) {
+//			if (testHappyNumber.isHappy(i)) {
+//				System.out.println(i + " is happy #");
+//			} else {
+//				System.out.println(i + " is not happy #");
+//
+//			}
+//		}
 
-			}
-		}
+		String s = ".00";
+		StdOut.println(isValidNumber(s));
+
+		DecimalFormat priceFormat = new DecimalFormat("0.0000");
+		priceFormat.format(Double.valueOf(s));
 		
 	}
 

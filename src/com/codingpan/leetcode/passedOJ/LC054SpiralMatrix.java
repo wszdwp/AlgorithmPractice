@@ -56,7 +56,7 @@ public class LC054SpiralMatrix {
             int[][] matrix = Utility.generateMatrix(i, i);
             List<Integer> res = solu.spiralOrder(matrix);
             Utility.printMatrix(matrix);
-            Utility.printIntList(res);
+            Utility.printList(res);
         }
     }
 }

@@ -169,13 +169,13 @@ public class SubStringWithKDistinctChars {
         //String s = "abcdefg";
         int k = 3;
         List<String> res = solu.findSubstringWithKDistinctChars(s, k);
-        Utility.printStringList(res);
+        Utility.printList(res);
 
         List<String> benchmark = solu.findAllSubstring(s, k);
-        Utility.printStringList(benchmark);
+        Utility.printList(benchmark);
 
         List<String> benchmark2 = solu.findAllSubstring2(s, k);
-        Utility.printStringList(benchmark2);
+        Utility.printList(benchmark2);
 
     }
 }

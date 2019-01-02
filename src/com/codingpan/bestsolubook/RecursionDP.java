@@ -5,7 +5,6 @@ import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class RecursionDP {
 
@@ -71,7 +70,7 @@ public class RecursionDP {
 //
 //    private void helper(int[] coins, int start, int amount, List<Integer> one, List<List<Integer>> res) {
 //        if (amount == 0) {
-//            Utility.printIntList(one);
+//            Utility.printList(one);
 //            res.add(new ArrayList<Integer>(one));
 //        } else {
 //            if (start >= coins.length || amount < 0) return;
@@ -98,7 +97,7 @@ public class RecursionDP {
 //    private void process(int[] coins, int index, int amount, List<Integer> one, List<List<Integer>> res) {
 //        if (index == coins.length || amount == 0) {
 //            if (amount == 0) {
-//                Utility.printIntList(one);
+//                Utility.printList(one);
 //                res.add(new ArrayList<Integer>(one));
 //            }
 //        } else {
@@ -127,7 +126,7 @@ public class RecursionDP {
 
     private void process2(int[] coins, int index, int amount, int[][] wayMap, List<Integer> one, List<List<Integer>> res) {
         if (amount == 0) {
-            Utility.printIntList(one);
+            Utility.printList(one);
             res.add(new ArrayList<Integer>(one));
         } else {
             if (index >= coins.length || amount < 0) {

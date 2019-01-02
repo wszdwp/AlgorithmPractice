@@ -86,7 +86,7 @@ public class LC078Subset {
 		int[] nums = {1, 2, 3};
 		List<List<Integer>> sub = solu.subsets(nums);
 		for (List<Integer> aList : sub) {
-			Utility.printIntList(aList);
+			Utility.printList(aList);
 		}
 	}
 }

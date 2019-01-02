@@ -42,7 +42,7 @@ public class SubsetsTest {
         int i = 1;
         for (ArrayList<Integer> one : res) {
             StdOut.print(i + ": ");
-            Utility.printIntList(one);
+            Utility.printList(one);
             i++;
         }
     }

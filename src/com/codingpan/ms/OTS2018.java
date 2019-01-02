@@ -835,7 +835,7 @@ public class OTS2018 {
         // reverse fib
 //        int a = 34, b = 22;
 //        List<Integer> res = solu.reverseFibonacci(a, b);
-//        Utility.printIntList(res);
+//        Utility.printList(res);
 
         //flip matrix
 //        for (int i = 1; i <= 5; i++) {
@@ -893,7 +893,7 @@ public class OTS2018 {
 //        int[] nums = {2, 3, 3, 3, 2, 2, 1, 4, 6, 7, 7, 8, 8, 8, 6, 9, 10};
 //        int k = 4;
 //        List<Integer> topKList = solu.getTopKFreqElement(nums, k);
-//        Utility.printIntList(topKList);
+//        Utility.printList(topKList);
 
         // compare version
 //        String v1 = "1.0.0.0.0.1";

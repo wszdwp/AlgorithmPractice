@@ -61,6 +61,6 @@ public class Ctx72 {
         Ctx72 solu = new Ctx72();
         String S = "a1b2";
         List<String> res = solu.letterCasePermutation(S);
-        Utility.printStringList(res);
+        Utility.printList(res);
     }
 }

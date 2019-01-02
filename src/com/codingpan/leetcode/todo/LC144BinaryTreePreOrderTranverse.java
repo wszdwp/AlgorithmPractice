@@ -35,6 +35,6 @@ public class LC144BinaryTreePreOrderTranverse {
         TreeNode root = Utility.createTree(arr);
         Utility.printTree(root, Utility.TreeOrder.LEVEL);
         List<Integer> res = solu.preorderTraversal(root);
-        Utility.printIntList(res);
+        Utility.printList(res);
     }
 }

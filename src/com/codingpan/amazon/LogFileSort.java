@@ -90,6 +90,6 @@ public class LogFileSort {
 //        logLines.add("ab1 off key dog");
 //        logLines.add("a8 act zoo");
         List<String> res = solu.reorderLines(logFileSize, logLines);
-        Utility.printStringList(res);
+        Utility.printList(res);
     }
 }

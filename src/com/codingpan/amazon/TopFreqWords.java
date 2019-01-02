@@ -59,6 +59,6 @@ public class TopFreqWords {
         String[] words = {"and", "he", "the", "to", "is", "Jack", "Jill"};
         List<String> wordsToExcluded = Arrays.asList(words);
         List<String> topWords = solu.retriveMostFreqUsedWords(literalText, wordsToExcluded);
-        Utility.printStringList(topWords);
+        Utility.printList(topWords);
     }
 }

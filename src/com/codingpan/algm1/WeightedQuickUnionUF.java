@@ -45,7 +45,7 @@ public class WeightedQuickUnionUF {
         }
 
         // improvement 1: path compression with two passes
-        // after find root, set id[] of each examined node to the root
+        // after find root, set company[] of each examined node to the root
 
         // improvement 2: one pass, halving the finding path
         return i;

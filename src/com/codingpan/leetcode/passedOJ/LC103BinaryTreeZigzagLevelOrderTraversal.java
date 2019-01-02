@@ -87,7 +87,7 @@ public class LC103BinaryTreeZigzagLevelOrderTraversal {
         StdOut.println();
         List<List<Integer>> res = solu.zigzagLevelOrder(root);
         for (List<Integer> ans : res) {
-            Utility.printIntList(ans);
+            Utility.printList(ans);
             StdOut.println();
         }
 

@@ -133,7 +133,7 @@ public class Ctx98 {
         String[] words = {"abc","deq","mee","aqq","dkd","ccc"};
         String pattern = "abb";
         List<String> res2 = solu.findAndReplacePattern(words, pattern);
-        Utility.printStringList(res2);
+        Utility.printList(res2);
     }
 
     /**

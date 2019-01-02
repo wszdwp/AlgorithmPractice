@@ -1,7 +1,6 @@
 package com.codingpan.leetcode.todo;
 
 import com.codingpan.leetcode.util.Utility;
-import edu.princeton.cs.algs4.StdOut;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +26,6 @@ public class LC386LexicographicalNumbers {
         int n = 13;
         LC386LexicographicalNumbers solu = new LC386LexicographicalNumbers();
         List<Integer> ans = solu.lexicalOrder(n);
-        Utility.printIntList(ans);
+        Utility.printList(ans);
     }
 }

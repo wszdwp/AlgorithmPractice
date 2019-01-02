@@ -64,7 +64,7 @@ public class LC249GroupShiftedString {
         String[] strings = {"acd", "dfg", "wyz", "yab", "mop", "bdfh", "a", "x", "moqs"};
         List<List<String>> res = solu.groupStrings(strings);
         for (List<String> one : res) {
-            Utility.printStringList(one);
+            Utility.printList(one);
         }
     }
 }

@@ -1,40 +1,73 @@
 package com.codingpan.leetcode.todo;
 
+import com.codingpan.leetcode.util.Utility;
+
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class LC212WordSearch2 {
-    public List<String> findWords(char[][] board, String[] words) {
+    public List<String> findWords(final char[][] bd, String[] words) {
         List<String> ans = new ArrayList<>();
-        Set<String> wSet = new HashSet<>();
-        for (String w : words) wSet.add(w);
-        boolean[][] mark = new boolean[board.length][board[0].length];
-        findWords(board, wSet, mark, ans);
-        return ans;
-    }
-
-    private void findWords(char[][] bd, Set<String> wSet, boolean[][] mark, List<String> ans) {
+        TrieNode root = buildTrie(words);
         int m = bd.length;
         int n = bd[0].length;
         for (int i = 0; i < m; i++) {
             for (int j = 0; j < n; j++) {
-                if (!mark[i][j]) {
-                    
-                }
+                dfs(bd, i, j, root, ans);
             }
         }
+        return ans;
+    }
+
+    private void dfs(char[][] bd, final int i, final int j, TrieNode p, List<String> ans) {
+        if (i < 0 || j < 0 || i >= bd.length || j >= bd[0].length) return;
+        char c = bd[i][j];
+        int index = c - 'a';
+        if (c == '#' || p.next[index] == null) return;
+        p = p.next[index];
+        if (p.word != null) {
+            ans.add(p.word);
+            p.word = null;
+        }
+        bd[i][j] = '#';
+        dfs(bd, i + 1, j, p, ans);
+        dfs(bd, i - 1, j, p, ans);
+        dfs(bd, i, j + 1, p, ans);
+        dfs(bd, i, j - 1, p, ans);
+        bd[i][j] = c;
+    }
+
+    class TrieNode {
+        TrieNode[] next = new TrieNode[26];
+        String word;
+    }
+
+    private TrieNode buildTrie(String[] words) {
+        TrieNode root = new TrieNode();
+        for (String word : words) {
+            TrieNode p = root;
+            for (char c : word.toCharArray()) {
+                int i = c - 'a';
+                if (p.next[i] == null) {
+                    p.next[i] = new TrieNode();
+                }
+                p = p.next[i];
+            }
+            p.word = word;
+        }
+        return root;
     }
 
     public static void main(String[] args) {
         LC212WordSearch2 solu = new LC212WordSearch2();
         char[][] board = {
-                {'o','a','a','n'},
-                {'e','t','a','e'},
-                {'i','h','k','r'},
-                {'i','f','l','v'}
+                {'o', 'a', 'a', 'n'},
+                {'e', 't', 'a', 'e'},
+                {'i', 'h', 'k', 'r'},
+                {'i', 'f', 'l', 'v'}
         };
         String[] words = {"oath","pea","eat","rain"};
+        List<String> res = solu.findWords(board, words);
+        Utility.printList(res);
     }
 }

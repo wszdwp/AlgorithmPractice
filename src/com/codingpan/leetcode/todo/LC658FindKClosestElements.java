@@ -41,7 +41,7 @@ public class LC658FindKClosestElements {
         int x = 5;
 
         List<Integer> res = solu.findClosestElements(arr, k, x);
-        Utility.printIntList(res);
+        Utility.printList(res);
 
 //        int[] cases = {1, -1, 5, 4, 6};
 //        for (int i : cases) {

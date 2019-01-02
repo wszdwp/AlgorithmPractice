@@ -10,7 +10,7 @@ public class LC279PerfectSquares {
     public int numSquares(int n) {
         List<Integer> squares = getSquares(n);
         if (squares.size() == 0 || n < 0) return 0;
-        Utility.printIntList(squares);
+        Utility.printList(squares);
         if (n == 1 || n == squares.get(0)) return 1;
         int[] minCount = new int[2];
         minCount[0] = Integer.MAX_VALUE;

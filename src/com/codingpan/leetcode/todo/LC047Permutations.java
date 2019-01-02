@@ -53,7 +53,7 @@ public class LC047Permutations {
         int[] nums = {1, 1, 3};
         List<List<Integer>> res = solu.permuteUnique(nums);
         for (List<Integer> aList : res) {
-            Utility.printIntList(aList);
+            Utility.printList(aList);
         }
     }
 }

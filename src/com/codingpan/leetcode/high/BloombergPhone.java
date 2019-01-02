@@ -83,7 +83,7 @@ public class BloombergPhone {
      * [http://www.1point3acres.com/bbs/thread-302842-1-1.html]
      * leetcode 234 palindrome linked list
      * Given a singly linked list, determine if it is a palindrome.
-     * @param 
+     * @param
      */
 
     public boolean isPalindrome(ListNode head) {

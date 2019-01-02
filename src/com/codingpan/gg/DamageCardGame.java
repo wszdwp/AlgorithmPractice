@@ -32,7 +32,7 @@ public class DamageCardGame {
 
     private boolean helper(int totalD, int totalM, int[] costs, int[] damages, int start, List<Integer> path) {
         if (totalD == 0 && totalM >= 0) {
-            Utility.printIntList(path);
+            Utility.printList(path);
             return true;
         } else {
             if (start == damages.length || totalD < 0 || totalM < 0) {
