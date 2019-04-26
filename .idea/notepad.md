@@ -1,8 +1,23 @@
-public void printZigZag(int[][] m) {
-    int startRow = 0;
-    int startCol = m[0].length - 1
-    int endRow = m.length - 1;
-    int endCol = 0;
+# 题目原型总结  
+
+## 随机函数    
+
+### 输入数据有限，已知
+例子:
+ - Random Pool 结构  
+ - 完美洗牌  
+
     
-    while (startRow 
-}
+### 输入数据无限，未知
+
+## 数组  
+
+### 排序  
+ - 给定有序数组，输出平方有序数组  
+ 
+
+## Permutation and Combination  
+
+###  
+  
+   

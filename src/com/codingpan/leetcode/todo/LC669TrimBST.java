@@ -11,7 +11,7 @@ public class LC669TrimBST {
         if (L > R) return root;
         List<Integer> inOrder = new ArrayList<Integer>();
         dfs(root, L, R, inOrder);
-        Utility.printIntList(inOrder);
+        Utility.printList(inOrder);
         return buildTree(inOrder, 0, inOrder.size()-1);
     }
 

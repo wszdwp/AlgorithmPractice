@@ -61,6 +61,6 @@ public class LC017LetterCombinationsOfPhoneNumber {
     	String digits = "632";
     	LC017LetterCombinationsOfPhoneNumber sol = new LC017LetterCombinationsOfPhoneNumber();
         List<String> res =  sol.letterCombinations2(digits);
-        Utility.printStringList(res);
+        Utility.printList(res);
     }
 }

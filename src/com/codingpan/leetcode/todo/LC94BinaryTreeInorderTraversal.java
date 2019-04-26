@@ -37,7 +37,7 @@ public class LC94BinaryTreeInorderTraversal {
         StdOut.println();
 //        Utility.printTree(root, Utility.TreeOrder.LEVEL);
         List<Integer> res = solu.inorderTraversal(root);
-        Utility.printIntList(res);
+        Utility.printList(res);
     }
 
 }

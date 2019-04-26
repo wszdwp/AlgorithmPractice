@@ -56,7 +56,7 @@ public class LC438FindAllAnagrams {
         String s = "cebaebabaccd";
         String t = "abc";
         List<Integer> res = solu.findAnagrams(s, t);
-        Utility.printIntList(res);
+        Utility.printList(res);
     }
 
 }

@@ -30,13 +30,52 @@ import java.util.*;
 
 public class LC078Subset {
 	public List<List<Integer>> subsets(int[] nums) {
+		// recursive 1
 //		List<List<Integer>> res = new ArrayList<List<Integer>>();
 //		res.add(new ArrayList<Integer>());
 //		Arrays.sort(nums);
 //		subsets(nums, 0, new boolean[nums.length], new ArrayList<Integer>(), res);
 //		return res;
 
+		// recursive 2
+//		List<List<Integer>> ans = new ArrayList<>();
+//		List<Integer> cur = new ArrayList<>();
+//		for (int i = 0; i <= nums.length; i++) {
+////			dfs(nums, i, nums.length, 0, cur, ans);
+//			dfs(nums, i, 0, cur, ans);
+//
+//		}
+//		return ans;
+
+		// iterative
 		return subsetsIterative(nums);
+	}
+
+	// recursive template 1 - subsets size from great to small
+	// go to the deepest recursion level then return result
+//	private void dfs(int[] nums, int d, int n, int s, List<Integer> cur, List<List<Integer>> ans) {
+//		if (d == n) {
+//			ans.add(new ArrayList<Integer>(cur));
+//			return;
+//		}
+//		for (int i = s; i < nums.length; i++) {
+//			cur.add(nums[i]);
+//			dfs(nums, d + 1, n, i + 1, cur, ans);
+//			cur.remove(cur.size() - 1);
+//		}
+//	}
+
+	// recursive template 2 - subsets size from small to great
+	private void dfs(int[] nums, int n, int s, List<Integer> cur, List<List<Integer>> ans) {
+		if (cur.size() == n) {
+			ans.add(new ArrayList<Integer>(cur));
+			return;
+		}
+		for (int i = s; i < nums.length; i++) {
+			cur.add(nums[i]);
+			dfs(nums, n, i + 1, cur, ans);
+			cur.remove(cur.size() - 1);
+		}
 	}
 
 	private void subsets(int[] nums, int start, boolean[] used, List<Integer> curr, List<List<Integer>> res) {
@@ -86,7 +125,7 @@ public class LC078Subset {
 		int[] nums = {1, 2, 3};
 		List<List<Integer>> sub = solu.subsets(nums);
 		for (List<Integer> aList : sub) {
-			Utility.printIntList(aList);
+			Utility.printList(aList);
 		}
 	}
 }

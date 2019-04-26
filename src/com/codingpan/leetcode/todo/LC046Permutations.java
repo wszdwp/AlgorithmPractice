@@ -95,7 +95,7 @@ public class LC046Permutations {
         int[] nums = {1, 1, 3};
         List<List<Integer>> res = solu.permute(nums);
         for (List<Integer> aList : res) {
-            Utility.printIntList(aList);
+            Utility.printList(aList);
         }
     }
 }

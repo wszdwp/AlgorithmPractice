@@ -55,6 +55,6 @@ public class LC145BinaryTreePostorderTraversal {
         TreeNode root = Utility.createTree(arr);
         Utility.printTree(root, Utility.TreeOrder.LEVEL);
         List<Integer> res = solu.postorderTraversal(root);
-        Utility.printIntList(res);
+        Utility.printList(res);
     }
 }

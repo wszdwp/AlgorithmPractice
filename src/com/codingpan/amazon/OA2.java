@@ -13,7 +13,7 @@ public class OA2 {
         if (literalText.isEmpty() || wordsToExcluded.size() == 0) return res;
 
         String[] words = literalText.trim().split("\\W+");
-        Utility.printStringList(Arrays.asList(words));
+        Utility.printList(Arrays.asList(words));
 
         Set<String> excludes = new HashSet<String>();
         for (String excludeWord : wordsToExcluded) {
@@ -60,6 +60,6 @@ public class OA2 {
         String[] words = {"and", "he", "the", "to", "is", "Jack", "Jill"};
         List<String> wordsToExcluded = Arrays.asList(words);
         List<String> topWords = oa2Test.retriveMostFreqUsedWords(literalText, wordsToExcluded);
-        Utility.printStringList(topWords);
+        Utility.printList(topWords);
     }
 }

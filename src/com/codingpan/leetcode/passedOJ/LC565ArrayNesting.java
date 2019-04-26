@@ -49,11 +49,11 @@ public class LC565ArrayNesting {
 //    public int arrayNesting(int[] nums) {
 //        if (nums.length <= 1)   return nums.length;
 //        int maxLen = 1;
-//        boolean[] id = new boolean[nums.length];
+//        boolean[] company = new boolean[nums.length];
 //        for (int i = 0; i < nums.length; i++) {
 //            int len = 0;
-//            while (!id[i] && i != nums[i]) {
-//                id[i] = true;
+//            while (!company[i] && i != nums[i]) {
+//                company[i] = true;
 //                i = nums[i];
 //                len++;
 //            }

@@ -1,8 +1,11 @@
 package com.codingpan.leetcode.passedOJ;
 
 
+import edu.princeton.cs.algs4.StdOut;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Stack;
 
 /**
  * [228. Summary Ranges](https://leetcode.com/problems/summary-ranges/description/)
@@ -56,5 +59,64 @@ public class LC228SummaryRanges {
         //int[] nums = {0, 10, 20, 40, 41, 55, 100};
         int[] nums = {};
         System.out.println(solu.summaryRanges(nums));
+    }
+
+    public static class LC032LongestValidParentheses {
+    //    public int longestValidParentheses(String s) {
+    //        if (s == null || s.length() <= 1) return 0;
+    //
+    //        int left = 0, right = 0;
+    //        int maxLen = 0;
+    //        for (int i = 0; i < s.length(); i++) {
+    //            char c = s.charAt(i);
+    //            if (c == '(') {
+    //                ++left;
+    //            } else {
+    //                ++right;
+    //            }
+    //            if (right <= left) {
+    //                int currLen = Math.min(left, right) * 2;
+    //                maxLen = Math.max(maxLen, currLen);
+    //            }
+    //            if (left >= right) {
+    //                left = 1;
+    //                right = 0;
+    //            }
+    //        }
+    //        return maxLen;
+    //    }
+
+        public int longestValidParentheses(String s) {
+            if (s == null || s.length() <= 1) return 0;
+
+            Stack<Integer> stk = new Stack<>();
+            int maxLen = 0;
+            for (int i = 0; i < s.length(); i++) {
+                char c = s.charAt(i);
+                if (c == '(') {
+                    stk.push(i);
+                } else {
+                    if (!stk.isEmpty() && s.charAt(stk.peek()) == '(') {
+                        stk.pop();
+                        maxLen = Math.max(maxLen, i - (stk.isEmpty() ? -1 : stk.peek()));
+                    } else {
+                        stk.push(i);
+                    }
+                }
+            }
+            return maxLen;
+        }
+
+        public static void main(String[] args) {
+            LC032LongestValidParentheses solu = new LC032LongestValidParentheses();
+            String s = "()(()";     // 2
+    //        String s = "(()";
+    //        String s = "()()()";
+    //        String s = ")()()";
+
+            StdOut.println("len = " + solu.longestValidParentheses(s));
+
+        }
+
     }
 }

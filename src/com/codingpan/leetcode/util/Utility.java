@@ -213,16 +213,9 @@ public class Utility {
 		System.out.println();
 	}
 
-	public static void printIntList(List<Integer> aList) {
-		for (Integer i : aList) {
-			System.out.print(i + ", ");
-		}
-		System.out.println();
-	}
-
-	public static void printStringList(List<String> sList) {
-		for (String s : sList) {
-			System.out.print(s + ", ");
+	public static<E> void printList(List<E> aList) {
+		for (E e : aList) {
+			System.out.print(e + ", ");
 		}
 		System.out.println();
 	}
@@ -362,6 +355,53 @@ public class Utility {
 		return buf.toString();
 	}
 
+	public static void permutate(int[] nums, boolean[] used, List<Integer> cur, List<List<Integer>> ans) {
+		if (cur.size() == nums.length) {
+			ans.add(new ArrayList<Integer>(cur));
+			return;
+		}
+
+		for (int i = 0; i < nums.length; i++) {
+			if (used[i]) continue;
+			used[i] = true;
+			cur.add(nums[i]);
+			permutate(nums, used, cur, ans);
+			cur.remove(cur.size() - 1);
+			used[i] = false;
+		}
+	}
+
+	public static void getCombination(int[] nums, int s, List<Integer> cur, List<List<Integer>> ans) {
+		if (s == nums.length) {
+			ans.add(new ArrayList<Integer>(cur));
+			return;
+		}
+
+		for (int i = s; i < nums.length; i++) {
+			cur.add(nums[i]);
+			getCombination(nums, i + 1, cur, ans);
+			cur.remove(cur.size() - 1);
+		}
+	}
+
+	// way 2
+	public static void combination(int[] nums, int d, int n, int s, List<Integer> cur, List<List<Integer>> ans) {
+		if (s == n) {
+			ans.add(new ArrayList<>(cur));
+		}
+		if (d == n) {
+			StdOut.print("sum = ");
+			printList(cur);
+			return;
+		}
+
+		for (int i = s; i < nums.length; i++) {
+			cur.add(nums[i]);
+			combination(nums, d + 1, n, i + 1, cur, ans);
+			cur.remove(cur.size() - 1);
+		}
+	}
+
 	/**
 	 * Unit test utility functions
 	 * @param args
@@ -383,8 +423,20 @@ public class Utility {
 		//int[] level = {7, 4, 12, 3, 6, 8, 1, 5, 10};
 		int[] level = {8, 6, 9, 1, 7, 12};
 
-		TreeNode root3 = createTreeLevelOrder(level);
-		Utility.printTreeStructure(root3);
+//		TreeNode root3 = createTreeLevelOrder(level);
+//		Utility.printTreeStructure(root3);
+
+		int[] nums = {1, 2, 3};
+		boolean[] used = new boolean[nums.length];
+		List<List<Integer>> ans = new ArrayList<>();
+		List<Integer> cur = new ArrayList<Integer>();
+
+		//permutate(nums, used, new ArrayList<Integer>(), ans);
+		//getCombination(nums, 0, new ArrayList<Integer>(), ans);
+		combination(nums, 0, nums.length, 0, cur, ans);
+		for (List<Integer> one : ans) {
+			printList(one);
+		}
 	}
 	
 }

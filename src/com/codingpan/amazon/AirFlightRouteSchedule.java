@@ -1,9 +1,7 @@
 package com.codingpan.amazon;
 
 import com.codingpan.leetcode.util.Utility;
-import edu.princeton.cs.algs4.StdOut;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 
@@ -144,7 +142,7 @@ public class AirFlightRouteSchedule {
 
         List<List<Integer>> res = solu.scheduleRoute(maxDistance, forwardRoutes, returnRoutes);
         for (List<Integer> ans : res) {
-            Utility.printIntList(ans);
+            Utility.printList(ans);
         }
 
     }
