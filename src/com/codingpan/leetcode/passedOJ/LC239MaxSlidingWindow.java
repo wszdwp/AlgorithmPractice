@@ -1,5 +1,7 @@
 package com.codingpan.leetcode.passedOJ;
 
+import java.util.LinkedList;
+
 /**
  * [239. Sliding Window Maximum](https://leetcode.com/problems/sliding-window-maximum/)
  * Given an array nums, there is a sliding window of size k which is moving from the very left of the array to the very right. You can only see the k numbers in the window. Each time the sliding window moves right by one position.
@@ -39,7 +41,7 @@ public class LC239MaxSlidingWindow {
         	maxWin[i] = findPeak(nums, s, e);
         	i++;
         }
-        
+
         return maxWin;
     }
 	
@@ -96,6 +98,28 @@ public class LC239MaxSlidingWindow {
 		
 		return peakAndIndex;
 	}
+
+	//solu3
+    public static int[] maxSlidingWindow3(int[] nums, int k) {
+		if (k == 0) return new int[0];
+
+		int[] ans = new int[nums.length - k + 1];
+		LinkedList<Integer> qmax = new LinkedList<>();
+		int j = 0;
+		for (int i = 0; i < nums.length; i++) {
+			while (!qmax.isEmpty() && nums[qmax.peekLast()] <= nums[i]) {
+				qmax.pollLast();
+			}
+			qmax.addLast(i);
+			if (i - qmax.peekFirst() == k) {
+				qmax.pollFirst();
+			}
+			if (i >= k - 1) {
+				ans[j++] = nums[qmax.peekFirst()];
+			}
+		}
+		return ans;
+	}
 	
 	public static void main(String[] args) {
 		int[] arr = {1, 3,-1, -3, 5, 3, 6, 7};
@@ -104,7 +128,11 @@ public class LC239MaxSlidingWindow {
 		printTest(maxSlidingWindow(arr2, 3));
 		printTest(maxSlidingWindow2(arr, 3));
 		printTest(maxSlidingWindow2(arr2, 3));
-	}
+
+        printTest(maxSlidingWindow3(arr, 3));
+        printTest(maxSlidingWindow3(arr2, 3));
+
+    }
 	
 	public static void printTest(int[] res) {
 		System.out.println("result is ");
