@@ -16,35 +16,34 @@ Credits:
 Special thanks to @porker2008 for adding this problem and creating all com.codingpan.test cases.
  */
 
-
 public class LC164MaximumGap {
-	//O(NlogN) Passed
-	public static int maximumGap(int[] nums) {
-		if (nums == null || nums.length < 2)	return 0;
-		
-		int maxGap = 0;
-		Arrays.sort(nums);
-		for (int i = 1 ; i < nums.length; i++) {
-			int gap = Math.abs(nums[i] - nums[i-1]);
-			if (gap > maxGap) {
-				maxGap = gap;
-			}
-		}
-		
-		return maxGap;
-	}
-	
-	//O(N) todo
-	public static int maximumGap2(int[] nums) {
-		if (nums == null || nums.length < 2)	return 0;
-		
-		int maxGap = 0;
-		//todo
-		return maxGap;
-	}	
-	public static void main(String[] args) {
-		int[] n = {9, 21, 4, 32, 45, 75};
-		System.out.println("Expected(30): " + maximumGap(n));
-	}
+  // O(NlogN) Passed
+  public static int maximumGap(int[] nums) {
+    if (nums == null || nums.length < 2) return 0;
 
+    int maxGap = 0;
+    Arrays.sort(nums);
+    for (int i = 1; i < nums.length; i++) {
+      int gap = Math.abs(nums[i] - nums[i - 1]);
+      if (gap > maxGap) {
+        maxGap = gap;
+      }
+    }
+
+    return maxGap;
+  }
+
+  // O(N) todo
+  public static int maximumGap2(int[] nums) {
+    if (nums == null || nums.length < 2) return 0;
+
+    int maxGap = 0;
+    // todo
+    return maxGap;
+  }
+
+  public static void main(String[] args) {
+    int[] n = {9, 21, 4, 32, 45, 75};
+    System.out.println("Expected(30): " + maximumGap(n));
+  }
 }
