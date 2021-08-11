@@ -1,3 +1,4 @@
 package com.codingpan.bestsolubook;
 
-public class HanoiTower {}
+public class HanoiTower {
+}

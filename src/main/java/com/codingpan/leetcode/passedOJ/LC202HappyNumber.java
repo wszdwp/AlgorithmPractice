@@ -24,60 +24,60 @@ import java.util.HashSet;
 
 public class LC202HappyNumber {
 
-  public static boolean isHappy(int n) {
-    if (n == 0) return false;
-    HashSet<Integer> hSet = new HashSet<Integer>();
-    return helper(n, hSet);
-  }
-
-  private static boolean helper(int n, HashSet<Integer> hSet) {
-    int tempRes = 0;
-    while (n > 0) {
-      int d = n % 10;
-      n = n / 10;
-      tempRes += d * d;
-    }
-    if (tempRes == 1) return true;
-    if (hSet.contains(tempRes)) {
-      return false;
-    } else {
-      hSet.add(tempRes);
+    public static boolean isHappy(int n) {
+        if (n == 0) return false;
+        HashSet<Integer> hSet = new HashSet<Integer>();
+        return helper(n, hSet);
     }
 
-    return helper(tempRes, hSet);
-  }
+    private static boolean helper(int n, HashSet<Integer> hSet) {
+        int tempRes = 0;
+        while (n > 0) {
+            int d = n % 10;
+            n = n / 10;
+            tempRes += d * d;
+        }
+        if (tempRes == 1) return true;
+        if (hSet.contains(tempRes)) {
+            return false;
+        } else {
+            hSet.add(tempRes);
+        }
 
-  // version 2
-  //	public boolean isHappy(int n) {
-  //        boolean res = false;
-  //        //todo: body
-  //        if (n <= 0)	return false;
-  //        if (n == 1)	return true;
-  //
-  //        while (n != 1) {
-  //        	n = splitAndSum(n);
-  //        }
-  //        if (n == 1)	return true;
-  //
-  //        return false;
-  //    }
-  //
-  //	private int splitAndSum(int n) {
-  //		int digit = 0;
-  //        int sum = 0;
-  //        while (n > 0) {
-  //        	digit = n % 10;
-  //        	sum += digit * digit;
-  //        	n = n / 10;
-  //        }
-  //
-  //        return sum;
-  //	}
+        return helper(tempRes, hSet);
+    }
 
-  public static void main(String[] args) {
-    int n = 19;
-    int n2 = 2;
-    System.out.println("19(true): " + isHappy(n));
-    System.out.println("2(false): " + isHappy(n2));
-  }
+    // version 2
+    //	public boolean isHappy(int n) {
+    //        boolean res = false;
+    //        //todo: body
+    //        if (n <= 0)	return false;
+    //        if (n == 1)	return true;
+    //
+    //        while (n != 1) {
+    //        	n = splitAndSum(n);
+    //        }
+    //        if (n == 1)	return true;
+    //
+    //        return false;
+    //    }
+    //
+    //	private int splitAndSum(int n) {
+    //		int digit = 0;
+    //        int sum = 0;
+    //        while (n > 0) {
+    //        	digit = n % 10;
+    //        	sum += digit * digit;
+    //        	n = n / 10;
+    //        }
+    //
+    //        return sum;
+    //	}
+
+    public static void main(String[] args) {
+        int n = 19;
+        int n2 = 2;
+        System.out.println("19(true): " + isHappy(n));
+        System.out.println("2(false): " + isHappy(n2));
+    }
 }

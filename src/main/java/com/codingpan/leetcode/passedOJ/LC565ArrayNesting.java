@@ -18,40 +18,40 @@ package com.codingpan.leetcode.passedOJ;
  * element of A is an integer within the range [0, N-1].
  */
 public class LC565ArrayNesting {
-  // change the content of the array
-  public int arrayNesting(int[] nums) {
-    if (nums.length <= 1) return nums.length;
-    int maxLen = 1;
+    // change the content of the array
+    public int arrayNesting(int[] nums) {
+        if (nums.length <= 1) return nums.length;
+        int maxLen = 1;
 
-    for (int i = 0; i < nums.length; i++) {
-      int len = 0;
-      while (i != nums[i]) {
-        int tmp = nums[i];
-        nums[i] = i;
-        i = tmp;
-        len++;
-      }
-      if (maxLen < len) maxLen = len;
+        for (int i = 0; i < nums.length; i++) {
+            int len = 0;
+            while (i != nums[i]) {
+                int tmp = nums[i];
+                nums[i] = i;
+                i = tmp;
+                len++;
+            }
+            if (maxLen < len) maxLen = len;
+        }
+
+        return maxLen;
     }
 
-    return maxLen;
-  }
-
-  // not change the content of the array, need extra n spaces
-  //    public int arrayNesting(int[] nums) {
-  //        if (nums.length <= 1)   return nums.length;
-  //        int maxLen = 1;
-  //        boolean[] company = new boolean[nums.length];
-  //        for (int i = 0; i < nums.length; i++) {
-  //            int len = 0;
-  //            while (!company[i] && i != nums[i]) {
-  //                company[i] = true;
-  //                i = nums[i];
-  //                len++;
-  //            }
-  //            if (maxLen < len) maxLen = len;
-  //        }
-  //
-  //        return maxLen;
-  //    }
+    // not change the content of the array, need extra n spaces
+    //    public int arrayNesting(int[] nums) {
+    //        if (nums.length <= 1)   return nums.length;
+    //        int maxLen = 1;
+    //        boolean[] company = new boolean[nums.length];
+    //        for (int i = 0; i < nums.length; i++) {
+    //            int len = 0;
+    //            while (!company[i] && i != nums[i]) {
+    //                company[i] = true;
+    //                i = nums[i];
+    //                len++;
+    //            }
+    //            if (maxLen < len) maxLen = len;
+    //        }
+    //
+    //        return maxLen;
+    //    }
 }

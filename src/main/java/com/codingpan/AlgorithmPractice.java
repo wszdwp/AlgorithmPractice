@@ -4,11 +4,11 @@
 package com.codingpan;
 
 public class AlgorithmPractice {
-  public String getGreeting() {
-    return "Hello world.";
-  }
+    public String getGreeting() {
+        return "Hello world.";
+    }
 
-  public static void main(String[] args) {
-    System.out.println(new AlgorithmPracticeApp().getGreeting());
-  }
+    public static void main(String[] args) {
+        System.out.println(new AlgorithmPractice().getGreeting());
+    }
 }

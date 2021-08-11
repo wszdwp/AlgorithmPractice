@@ -21,25 +21,25 @@ import java.util.List;
  * @author pan
  */
 public class LeetCodeString {
-  public List<Integer> findSubstring(String s, String[] words) {
-    List<Integer> res = new ArrayList<Integer>();
-    if (s == null || s.isEmpty() || words.length == 0) return res;
+    public List<Integer> findSubstring(String s, String[] words) {
+        List<Integer> res = new ArrayList<Integer>();
+        if (s == null || s.isEmpty() || words.length == 0) return res;
 
-    int wordLen = words[0].length();
-    int windowSize = words.length * wordLen;
-    HashMap<String, Integer> hMap = new HashMap<String, Integer>();
-    for (String w : words) {
-      if (hMap.containsKey(w)) {
-        hMap.put(w, hMap.get(w) + 1);
-      } else {
-        hMap.put(w, 1);
-      }
+        int wordLen = words[0].length();
+        int windowSize = words.length * wordLen;
+        HashMap<String, Integer> hMap = new HashMap<String, Integer>();
+        for (String w : words) {
+            if (hMap.containsKey(w)) {
+                hMap.put(w, hMap.get(w) + 1);
+            } else {
+                hMap.put(w, 1);
+            }
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            String wd = s.substring(i, i + wordLen);
+        }
+
+        return res;
     }
-
-    for (int i = 0; i < s.length(); i++) {
-      String wd = s.substring(i, i + wordLen);
-    }
-
-    return res;
-  }
 }

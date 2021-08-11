@@ -9,45 +9,45 @@ import java.util.TreeSet;
  * difference between i and j is at most k.
  */
 public class LC220ContainsDuplicateIII {
-  // Failed at com.codingpan.test case 4
-  public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
-    TreeSet<Integer> treeSet = new TreeSet<Integer>();
-    for (int i = 0; i < nums.length; i++) {
-      Integer max = treeSet.floor(nums[i] + t);
-      Integer min = treeSet.ceiling(nums[i] - t);
-      if (max != null && max >= nums[i]) return true;
-      if (min != null && min <= nums[i]) return true;
-      treeSet.add(nums[i]);
-      if (i >= k) treeSet.remove(nums[i - k]);
+    // Failed at com.codingpan.test case 4
+    public boolean containsNearbyAlmostDuplicate(int[] nums, int k, int t) {
+        TreeSet<Integer> treeSet = new TreeSet<Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            Integer max = treeSet.floor(nums[i] + t);
+            Integer min = treeSet.ceiling(nums[i] - t);
+            if (max != null && max >= nums[i]) return true;
+            if (min != null && min <= nums[i]) return true;
+            treeSet.add(nums[i]);
+            if (i >= k) treeSet.remove(nums[i - k]);
+        }
+        return false;
     }
-    return false;
-  }
 
-  public static void main(String[] args) {
-    LC220ContainsDuplicateIII solu = new LC220ContainsDuplicateIII();
-    // false
-    // int[] nums = {-1, 2147483647};
-    // int k = 1;
-    // int t = 2147483647;
+    public static void main(String[] args) {
+        LC220ContainsDuplicateIII solu = new LC220ContainsDuplicateIII();
+        // false
+        // int[] nums = {-1, 2147483647};
+        // int k = 1;
+        // int t = 2147483647;
 
-    // true
-    // int[] nums = {-1, -1};
-    // int k = 1;
-    // int t = 0;
+        // true
+        // int[] nums = {-1, -1};
+        // int k = 1;
+        // int t = 0;
 
-    // false
-    // int[] nums = {2147483647, -2147483647};
-    // int k = 1;
-    // int t = 2147483647;
+        // false
+        // int[] nums = {2147483647, -2147483647};
+        // int k = 1;
+        // int t = 2147483647;
 
-    // 4 true
-    int[] nums = {-2147483648, -2147483647};
-    int k = 3;
-    int t = 3;
+        // 4 true
+        int[] nums = {-2147483648, -2147483647};
+        int k = 3;
+        int t = 3;
 
-    //        int[] nums = {-1, -1};
-    //        int k = 1;
-    //        int t = -1;
-    System.out.println(solu.containsNearbyAlmostDuplicate(nums, k, t));
-  }
+        //        int[] nums = {-1, -1};
+        //        int k = 1;
+        //        int t = -1;
+        System.out.println(solu.containsNearbyAlmostDuplicate(nums, k, t));
+    }
 }

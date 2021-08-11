@@ -14,29 +14,29 @@ package com.codingpan.leetcode.todo;
  * <p>Explanation: 'e' is the letter that was added.
  */
 public class LC389FindTheDifference {
-  public char findTheDifference(String s, String t) {
-    char[] array1 = s.toCharArray();
-    char[] array2 = t.toCharArray();
+    public char findTheDifference(String s, String t) {
+        char[] array1 = s.toCharArray();
+        char[] array2 = t.toCharArray();
 
-    int asciis = 0;
-    int asciit = 0;
+        int asciis = 0;
+        int asciit = 0;
 
-    for (int i = 0; i < array1.length; i++) {
-      asciis ^= (int) array1[i];
+        for (int i = 0; i < array1.length; i++) {
+            asciis ^= array1[i];
+        }
+
+        for (int i = 0; i < array2.length; i++) {
+            asciit ^= array2[i];
+        }
+
+        return (char) (asciit - asciis);
     }
 
-    for (int i = 0; i < array2.length; i++) {
-      asciit ^= (int) array2[i];
+    public static void main(String[] args) {
+        LC389FindTheDifference test = new LC389FindTheDifference();
+        String s = "abcdr";
+        String t = "abcd";
+        char res = test.findTheDifference(s, t);
+        System.out.println("res = " + (int) res);
     }
-
-    return (char) (asciit - asciis);
-  }
-
-  public static void main(String[] args) {
-    LC389FindTheDifference test = new LC389FindTheDifference();
-    String s = "abcdr";
-    String t = "abcd";
-    char res = test.findTheDifference(s, t);
-    System.out.println("res = " + (int) res);
-  }
 }

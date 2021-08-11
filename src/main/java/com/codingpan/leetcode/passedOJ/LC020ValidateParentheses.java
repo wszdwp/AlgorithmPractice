@@ -27,68 +27,68 @@ import java.util.Map;
 import java.util.Stack;
 
 public class LC020ValidateParentheses {
-  //	public static boolean isValid(String s) {
-  //		if (s == null || s.isEmpty()) {
-  //			return false;
-  //		}
-  //
-  //		Stack<Character> stk = new Stack<Character>();
-  //		final char[] C1 = {'(', ')'};
-  //		final char[] C2 = {'[', ']'};
-  //		final char[] C3 = {'{', '}'};
-  //
-  //		char[] cStr = s.toCharArray();
-  //
-  //		for (int i = 0; i < cStr.length; i++) {
-  //			char c = cStr[i];
-  //			if (stk.isEmpty()) {
-  //				if (c == C1[1] || c == C2[1] || c == C3[1]) {
-  //					return false;
-  //				} else {
-  //					stk.push(c);
-  //				}
-  //			} else {
-  //				if (c == C1[1] || c == C2[1] || c == C3[1]) {
-  //					char cc = stk.pop();
-  //					if ( (cc == C1[0] && c == C1[1])
-  //							|| (cc == C2[0] && c == C2[1])
-  //							|| (cc == C3[0] && c == C3[1])
-  //							)	continue;
-  //					else {
-  //						return false;
-  //					}
-  //				} else {
-  //					stk.push(c);
-  //				}
-  //			}
-  //		}
-  //
-  //		return stk.isEmpty();
-  //	}
+    //	public static boolean isValid(String s) {
+    //		if (s == null || s.isEmpty()) {
+    //			return false;
+    //		}
+    //
+    //		Stack<Character> stk = new Stack<Character>();
+    //		final char[] C1 = {'(', ')'};
+    //		final char[] C2 = {'[', ']'};
+    //		final char[] C3 = {'{', '}'};
+    //
+    //		char[] cStr = s.toCharArray();
+    //
+    //		for (int i = 0; i < cStr.length; i++) {
+    //			char c = cStr[i];
+    //			if (stk.isEmpty()) {
+    //				if (c == C1[1] || c == C2[1] || c == C3[1]) {
+    //					return false;
+    //				} else {
+    //					stk.push(c);
+    //				}
+    //			} else {
+    //				if (c == C1[1] || c == C2[1] || c == C3[1]) {
+    //					char cc = stk.pop();
+    //					if ( (cc == C1[0] && c == C1[1])
+    //							|| (cc == C2[0] && c == C2[1])
+    //							|| (cc == C3[0] && c == C3[1])
+    //							)	continue;
+    //					else {
+    //						return false;
+    //					}
+    //				} else {
+    //					stk.push(c);
+    //				}
+    //			}
+    //		}
+    //
+    //		return stk.isEmpty();
+    //	}
 
-  public static boolean isValid(String s) {
-    Map<Character, Character> map = new HashMap<>();
-    map.put('(', ')');
-    map.put('[', ']');
-    map.put('{', '}');
-    Stack<Character> stk = new Stack<>();
-    for (int i = 0; i < s.length(); i++) {
-      char c = s.charAt(i);
-      if (c == '(' || c == '[' || c == '{') {
-        stk.push(c);
-      } else {
-        if (stk.isEmpty() || map.get(stk.pop()) != c) return false;
-      }
+    public static boolean isValid(String s) {
+        Map<Character, Character> map = new HashMap<>();
+        map.put('(', ')');
+        map.put('[', ']');
+        map.put('{', '}');
+        Stack<Character> stk = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (c == '(' || c == '[' || c == '{') {
+                stk.push(c);
+            } else {
+                if (stk.isEmpty() || map.get(stk.pop()) != c) return false;
+            }
+        }
+
+        return stk.isEmpty();
     }
 
-    return stk.isEmpty();
-  }
-
-  public static void main(String[] args) {
-    String[] ss = {"()()", "()[]{}", "()"};
-    String[] sss = {"([)]", "(]"};
-    for (String s : ss) {
-      System.out.println(isValid(s));
+    public static void main(String[] args) {
+        String[] ss = {"()()", "()[]{}", "()"};
+        String[] sss = {"([)]", "(]"};
+        for (String s : ss) {
+            System.out.println(isValid(s));
+        }
     }
-  }
 }

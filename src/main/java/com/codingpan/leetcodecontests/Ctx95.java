@@ -1,3 +1,4 @@
 package com.codingpan.leetcodecontests;
 
-public class Ctx95 {}
+public class Ctx95 {
+}

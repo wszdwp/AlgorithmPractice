@@ -15,33 +15,33 @@ package com.codingpan.leetcode.passedOJ;
  * x) { val = x; } }
  */
 public class LC203RemoveLinkedListElement {
-  class ListNode {
-    int val;
-    ListNode next;
+    class ListNode {
+        int val;
+        ListNode next;
 
-    ListNode(int x) {
-      val = x;
-    }
-  }
-
-  public ListNode removeElements(ListNode head, int val) {
-    if (head == null) return null;
-    ListNode fakeHead = new ListNode(0);
-    fakeHead.next = head;
-    ListNode pre = fakeHead;
-    ListNode cur = head;
-
-    while (cur != null) {
-      if (cur.val == val) {
-        ListNode temp = cur.next;
-        pre.next = temp;
-        cur = pre.next;
-      } else {
-        pre = cur;
-        cur = cur.next;
-      }
+        ListNode(int x) {
+            val = x;
+        }
     }
 
-    return fakeHead.next;
-  }
+    public ListNode removeElements(ListNode head, int val) {
+        if (head == null) return null;
+        ListNode fakeHead = new ListNode(0);
+        fakeHead.next = head;
+        ListNode pre = fakeHead;
+        ListNode cur = head;
+
+        while (cur != null) {
+            if (cur.val == val) {
+                ListNode temp = cur.next;
+                pre.next = temp;
+                cur = pre.next;
+            } else {
+                pre = cur;
+                cur = cur.next;
+            }
+        }
+
+        return fakeHead.next;
+    }
 }

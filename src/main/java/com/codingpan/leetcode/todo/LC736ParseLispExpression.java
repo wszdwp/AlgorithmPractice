@@ -52,7 +52,7 @@ public class LC736ParseLispExpression {
   The length of expression is at most 2000. (It is also non-empty, as that would not be a legal expression.)
   The answer and all intermediate calculations of that answer are guaranteed to fit in a 32-bit integer.*/
 
-  public int evaluate(String expression) {
-    return -1;
-  }
+    public int evaluate(String expression) {
+        return -1;
+    }
 }
